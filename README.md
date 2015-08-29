@@ -1,7 +1,8 @@
 # WiFi_Tool
 安卓WiFi密码查看器
-# License
 
+License
+========
 The MIT License (MIT)
 
 Copyright (c) 2015 WuHaojie
