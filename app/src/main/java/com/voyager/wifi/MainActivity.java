@@ -8,6 +8,7 @@ import android.content.ClipboardManager;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -76,14 +77,16 @@ public class MainActivity extends Activity implements View.OnClickListener {
                                 return false;
                             }
                         });
-                        pd.dismiss();
                     }
                 });
+                pd.dismiss();
             }
         }).start();
     }
 
     private void copyPwd(int position) {
+        Vibrator vibrator = (Vibrator) getSystemService(Service.VIBRATOR_SERVICE);
+        vibrator.vibrate(30);
         ClipboardManager cm = (ClipboardManager) getSystemService(Service.CLIPBOARD_SERVICE);
         cm.setPrimaryClip(ClipData.newPlainText(null, wifiList.get(position).getPassword()));
     }
